@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "application.security.expiration",
+    "type": "java.lang.String",
+    "description": "A description for 'application.security.expiration'"
+  },
+  {
+    "name": "application.security.refresh-expiration",
+    "type": "java.lang.String",
+    "description": "A description for 'application.security.refresh-expiration'"
+  },
+  {
+    "name": "application.security.extra-expiration",
+    "type": "java.lang.String",
+    "description": "A description for 'application.security.extra-expiration'"
+  }
+]}
