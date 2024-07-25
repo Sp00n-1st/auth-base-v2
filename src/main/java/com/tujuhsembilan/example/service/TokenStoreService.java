@@ -19,6 +19,7 @@ import com.tujuhsembilan.example.model.TokenStore;
 import com.tujuhsembilan.example.repository.TokenStoreRepo;
 
 import lombok.RequiredArgsConstructor;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -27,6 +28,12 @@ public class TokenStoreService {
     private final JwtEncoder jwtEncoder;
 
     public void saveToken(TokenStore tokenStore) {
+        Optional<TokenStore> oldToken = tokenStoreRepo.findByUsername(tokenStore.getUsername());
+
+        if (oldToken.isPresent()) {
+            tokenStoreRepo.deleteById(oldToken.get().getId());
+        }
+
         tokenStoreRepo.save(tokenStore);
     }
 

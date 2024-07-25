@@ -11,4 +11,6 @@ public interface TokenStoreRepo extends JpaRepository<TokenStore, UUID> {
     Optional<TokenStore> findByAccessToken(String accessToken);
 
     Optional<TokenStore> findByRefreshToken(String refreshToken);
+
+    Optional<TokenStore> findByUsername(String username);
 }
